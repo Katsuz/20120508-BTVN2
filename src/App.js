@@ -24,15 +24,12 @@ function App() {
       if (newImages.length === 0) {
         return;
       }
-
-      // console.log(images);
       setImages((images) => [...images, ...newImages]);
-    }, 1500);
+    }, 1000);
   }
 
   useEffect(() => {
-    console.log("a");
-    fetchData(); // Update the ref whenever page changes
+    fetchData();
   }, [page]);
 
   useEffect(() => {
@@ -58,7 +55,6 @@ function App() {
   function handleIntersection(entries) {
     if (entries[0].isIntersecting) {
       setPage((prevPage) => prevPage + 1);
-      // console.log(page);
     }
   }
 
